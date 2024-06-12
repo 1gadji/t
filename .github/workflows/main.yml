@@ -15,7 +15,7 @@ jobs:
       run: sudo apt-get install g++
 
     - name: Compile C++ code
-      run: g++ -o /t/test.cpp
+      run: g++ -o ${{github.workspace}}
 
     - name: Run the program
-      run: /home/gadji/exam/test.cpp
+      run: ${{github.workspace}}/build

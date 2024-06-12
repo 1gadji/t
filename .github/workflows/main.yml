@@ -14,8 +14,10 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install g++
 
-    - name: Compile C++ code
-      run: g++ -o ${{github.workspace}}
-
+    - name: Compile and run C++ code
+      run: |
+        g++ -o my_program ${{github.workspace}}/test.cpp
+        ./${{github.workspace}}/my_program
+        
     - name: Run the program
       run: ${{github.workspace}}/build
